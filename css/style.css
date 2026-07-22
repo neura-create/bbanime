@@ -3,19 +3,19 @@
 /* Los textos bubble pasan por encima con el scroll, sin tarjetas. */
 
 :root {
-  --void: #0B0A1F;
+  --void: #1A1033;
   --nebula: #241245;
-  --nebula-2: #3B1E63;
-  --bubble-pink: #FF3D8F;
-  --starlight: #F5F1FF;
-  --muted: #E7E0FB;
-  --bubble-glow: 123, 58, 237;
-  --cyan: #35DCE0;
-  --gold: #FFC94D;
+  --nebula-2: #2A1A55;
+  --bubble-pink: #FF3DA5;
+  --starlight: #FFFFFF;
+  --muted: #C7B8E8;
+  --bubble-glow: 26, 16, 51;
+  --cyan: #3DD9F7;
+  --gold: #FFE74C;
   --font-display: "Baloo 2", sans-serif;
   --font-body: "Nunito", sans-serif;
   --font-mono: "Space Mono", monospace;
-  --copy-shadow: 0 2px 18px rgba(11,10,31,0.85), 0 10px 44px rgba(11,10,31,0.65);
+  --copy-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 8px rgba(0,0,0,0.6);
 }
 
 * { box-sizing: border-box; }
@@ -37,9 +37,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .bg-cosmic {
   position: absolute; inset: 0;
   background:
-    radial-gradient(60vmax 60vmax at 18% 10%, rgba(255,61,143,0.16), transparent 60%),
-    radial-gradient(70vmax 70vmax at 85% 30%, rgba(53,220,224,0.10), transparent 55%),
-    linear-gradient(180deg, var(--void) 0%, var(--nebula) 55%, var(--nebula-2) 100%);
+    radial-gradient(ellipse at top right, rgba(255,61,165,0.25), transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(61,217,247,0.2), transparent 50%),
+    var(--void);
 }
 
 .spark { position: absolute; animation: twinkle 3.2s ease-in-out infinite; z-index: 1; }
@@ -152,17 +152,17 @@ main { position: relative; z-index: 3; }
 .phase-hero { min-height: 100vh; }
 .phase-hero .phase-copy::before { display: none; }
 .phase-right { justify-content: flex-end; text-align: right; }
-.phase-copy { position: relative; max-width: 30rem; text-shadow: var(--copy-shadow); z-index: 1; }
+.phase-copy { position: relative; max-width: 30rem; text-shadow: var(--copy-shadow); z-index: 1; isolation: isolate; }
 .phase-copy::before {
-  content: ""; position: absolute; inset: -1.6rem -0.8rem; z-index: -1; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(var(--bubble-glow), 0.58) 0%, rgba(var(--bubble-glow), 0.34) 45%, rgba(var(--bubble-glow), 0) 75%);
-  filter: blur(20px);
+  content: ""; position: absolute; left: 50%; top: 50%; width: 135%; height: 170%;
+  transform: translate(-50%, -50%); z-index: -1; filter: blur(10px); pointer-events: none;
+  background: radial-gradient(ellipse at center,
+    rgba(var(--bubble-glow), 0.82) 0%,
+    rgba(var(--bubble-glow), 0.6) 30%,
+    rgba(var(--bubble-glow), 0.28) 60%,
+    rgba(var(--bubble-glow), 0) 82%);
 }
 .phase-copy-wide { max-width: 60rem; }
-@media (min-width: 640px) {
-  .phase-copy::before { inset: -2.4rem -3.2rem; filter: blur(26px); }
-  .phase-copy-wide::before { inset: -2.4rem -4vw; }
-}
 .section-label {
   font-family: var(--font-mono); color: var(--gold); font-size: 0.78rem; letter-spacing: 0.14em;
   display: block; margin-bottom: 0.8rem;

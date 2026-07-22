@@ -66,7 +66,7 @@
   }
 
   var IMAGE_SCALE = 0.78;
-  var bgColor = "#241245";
+  var bgColor = "#1A1033";
 
   function sampleBgColor(img) {
     try {
