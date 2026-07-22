@@ -86,7 +86,7 @@
       // A diferencia de bbanime.vercel.app (cuyo propio video ya tiene un
       // fondo de estudio blanco), nuestro video tiene un fondo grisaceo;
       // lo aclaramos hacia blanco para lograr el mismo resultado visual.
-      var WHITEN = 0.94;
+      var WHITEN = 0.97;
       r = r + (255 - r) * WHITEN;
       g = g + (255 - g) * WHITEN;
       b = b + (255 - b) * WHITEN;
@@ -104,7 +104,9 @@
     var dx = (cw - dw) / 2, dy = (ch - dh) / 2;
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, cw, ch);
+    ctx.filter = "saturate(1.15) brightness(1.06)";
     ctx.drawImage(img, dx, dy, dw, dh);
+    ctx.filter = "none";
   }
 
   function initScrub() {
