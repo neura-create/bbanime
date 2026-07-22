@@ -65,7 +65,7 @@
     if (currentFrame >= 0) drawFrame(currentFrame);
   }
 
-  var IMAGE_SCALE = 0.85;
+  var IMAGE_SCALE = 0.78;
   var bgColor = "#241245";
 
   function sampleBgColor(img) {
