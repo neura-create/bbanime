@@ -82,14 +82,18 @@
           r += d[k]; g += d[k + 1]; b += d[k + 2]; n++;
         });
       }
-      bgColor = "rgb(" + Math.round(r / n) + "," + Math.round(g / n) + "," + Math.round(b / n) + ")";
+      r = r / n; g = g / n; b = b / n;
+      // A diferencia de bbanime.vercel.app (cuyo propio video ya tiene un
+      // fondo de estudio blanco), nuestro video tiene un fondo grisaceo;
+      // lo aclaramos hacia blanco para lograr el mismo resultado visual.
+      var WHITEN = 0.8;
+      r = r + (255 - r) * WHITEN;
+      g = g + (255 - g) * WHITEN;
+      b = b + (255 - b) * WHITEN;
+      bgColor = "rgb(" + Math.round(r) + "," + Math.round(g) + "," + Math.round(b) + ")";
     } catch (e) {}
   }
 
-  // Igual que bbanime.vercel.app (la referencia): "cover" achicado, relleno
-  // solido con el color muestreado tal cual (sin aclarar ni filtrar) — el
-  // contraste de la pagina lo dan los textos y el scrim oscuro, no un
-  // tratamiento de color sobre el video.
   function drawFrame(index) {
     var img = frames[index];
     if (!img || !img.naturalWidth) return;
