@@ -159,12 +159,22 @@
 
   loadFrames();
 
-  // ---- Header on scroll --------------------------------------------------
+  // ---- Header: se esconde al bajar, vuelve al subir (asi no tapa la ------
+  // botella durante el scroll principal, pero el nav sigue disponible). -----
   var header = document.getElementById("site-header");
+  var lastScroll = 0;
+  var navOpenRef = document.getElementById("nav-links");
   ScrollTrigger.create({
     start: "top -80",
     onUpdate: function (self) {
-      header.classList.toggle("scrolled", self.scroll() > 80);
+      var y = self.scroll();
+      header.classList.toggle("scrolled", y > 80);
+      var goingDown = y > lastScroll;
+      var navOpen = navOpenRef && navOpenRef.classList.contains("open");
+      if (!navOpen) {
+        header.classList.toggle("hidden-nav", goingDown && y > 220);
+      }
+      lastScroll = y;
     }
   });
 
