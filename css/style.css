@@ -12,8 +12,8 @@
   --bubble-glow: 26, 16, 51;
   --cyan: #3DD9F7;
   --gold: #FFE74C;
-  --font-display: "Baloo 2", sans-serif;
-  --font-body: "Nunito", sans-serif;
+  --font-display: "Bagel Fat One", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Space Mono", monospace;
   --copy-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 8px rgba(0,0,0,0.6);
 }
