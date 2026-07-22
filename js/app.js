@@ -82,7 +82,13 @@
           r += d[k]; g += d[k + 1]; b += d[k + 2]; n++;
         });
       }
-      bgColor = "rgb(" + Math.round(r / n) + "," + Math.round(g / n) + "," + Math.round(b / n) + ")";
+      r = r / n; g = g / n; b = b / n;
+      var LIGHTEN = 0.65; // mezcla con blanco para un fondo mas claro y que la
+                          // botella se vea con mas contraste/color
+      r = r + (255 - r) * LIGHTEN;
+      g = g + (255 - g) * LIGHTEN;
+      b = b + (255 - b) * LIGHTEN;
+      bgColor = "rgb(" + Math.round(r) + "," + Math.round(g) + "," + Math.round(b) + ")";
     } catch (e) {}
   }
 
