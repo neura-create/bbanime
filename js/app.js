@@ -83,7 +83,7 @@
         });
       }
       r = r / n; g = g / n; b = b / n;
-      var LIGHTEN = 0.65; // mezcla con blanco para un fondo mas claro y que la
+      var LIGHTEN = 0.85; // mezcla con blanco para un fondo mas claro y que la
                           // botella se vea con mas contraste/color
       r = r + (255 - r) * LIGHTEN;
       g = g + (255 - g) * LIGHTEN;
@@ -106,7 +106,9 @@
     var dx = (cw - dw) / 2, dy = (ch - dh) / 2;
     ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, cw, ch);
+    ctx.filter = "saturate(1.35) contrast(1.1) brightness(1.04)";
     ctx.drawImage(img, dx, dy, dw, dh);
+    ctx.filter = "none";
   }
 
   function initScrub() {
