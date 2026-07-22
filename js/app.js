@@ -122,6 +122,21 @@
         }
       }
     });
+
+    // Pequeno zoom sobre la botella al llegar a la seccion final "Tu botella".
+    var tiendaSection = document.getElementById("tienda");
+    if (tiendaSection) {
+      ScrollTrigger.create({
+        trigger: tiendaSection,
+        start: "top 70%",
+        end: "top 5%",
+        scrub: true,
+        onUpdate: function (self) {
+          var scale = 1 + self.progress * 0.14;
+          canvas.style.transform = "scale(" + scale.toFixed(3) + ")";
+        }
+      });
+    }
   }
 
   function loadFrames() {
