@@ -83,7 +83,7 @@
         });
       }
       r = r / n; g = g / n; b = b / n;
-      var LIGHTEN = 0.96; // mezcla con blanco para un fondo mas claro y que la
+      var LIGHTEN = 0.88; // mezcla con blanco para un fondo mas claro y que la
                           // botella se vea con mas contraste/color
       r = r + (255 - r) * LIGHTEN;
       g = g + (255 - g) * LIGHTEN;
@@ -113,15 +113,15 @@
     // El video tiene su propio vinieteado (se oscurece en los bordes); lo
     // neutralizamos con un degrade blanco arriba y abajo, sin importar la
     // relacion de aspecto de la pantalla.
-    var edge = ch * 0.22;
+    var edge = ch * 0.16;
     var topGrad = ctx.createLinearGradient(0, 0, 0, edge);
-    topGrad.addColorStop(0, "rgba(255,255,255,0.8)");
+    topGrad.addColorStop(0, "rgba(255,255,255,0.6)");
     topGrad.addColorStop(1, "rgba(255,255,255,0)");
     ctx.fillStyle = topGrad;
     ctx.fillRect(0, 0, cw, edge);
     var botGrad = ctx.createLinearGradient(0, ch - edge, 0, ch);
     botGrad.addColorStop(0, "rgba(255,255,255,0)");
-    botGrad.addColorStop(1, "rgba(255,255,255,0.8)");
+    botGrad.addColorStop(1, "rgba(255,255,255,0.6)");
     ctx.fillStyle = botGrad;
     ctx.fillRect(0, ch - edge, cw, edge);
   }

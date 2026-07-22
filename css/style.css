@@ -150,11 +150,12 @@ main { position: relative; z-index: 3; }
   text-align: center; padding: 6rem 6vw; will-change: transform, opacity;
 }
 .phase-hero { min-height: 100vh; }
+.phase-hero .phase-copy::before { display: none; }
 .phase-right { justify-content: flex-end; text-align: right; }
 .phase-copy { position: relative; max-width: 30rem; text-shadow: var(--copy-shadow); z-index: 1; }
 .phase-copy::before {
   content: ""; position: absolute; inset: -1.6rem -0.8rem; z-index: -1; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(var(--bubble-glow), 0.75) 0%, rgba(var(--bubble-glow), 0.48) 45%, rgba(var(--bubble-glow), 0) 75%);
+  background: radial-gradient(ellipse at center, rgba(var(--bubble-glow), 0.58) 0%, rgba(var(--bubble-glow), 0.34) 45%, rgba(var(--bubble-glow), 0) 75%);
   filter: blur(20px);
 }
 .phase-copy-wide { max-width: 60rem; }
