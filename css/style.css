@@ -6,12 +6,12 @@
   --void: #1A1033;
   --nebula: #241245;
   --nebula-2: #2A1A55;
-  --bubble-pink: #FF3DA5;
+  --bubble-pink: #FF199A;
   --starlight: #FFFFFF;
-  --muted: #C7B8E8;
-  --bubble-glow: 26, 16, 51;
-  --cyan: #3DD9F7;
-  --gold: #FFE74C;
+  --muted: #D6B8FF;
+  --bubble-glow: 62, 22, 130;
+  --cyan: #1FE0FF;
+  --gold: #FFDD00;
   --font-display: "Bagel Fat One", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "Space Mono", monospace;
@@ -157,9 +157,9 @@ main { position: relative; z-index: 3; }
   content: ""; position: absolute; left: 50%; top: 50%; width: 135%; height: 170%;
   transform: translate(-50%, -50%); z-index: -1; filter: blur(10px); pointer-events: none;
   background: radial-gradient(ellipse at center,
-    rgba(var(--bubble-glow), 0.82) 0%,
-    rgba(var(--bubble-glow), 0.6) 30%,
-    rgba(var(--bubble-glow), 0.28) 60%,
+    rgba(var(--bubble-glow), 0.92) 0%,
+    rgba(var(--bubble-glow), 0.72) 30%,
+    rgba(var(--bubble-glow), 0.38) 60%,
     rgba(var(--bubble-glow), 0) 82%);
 }
 .phase-copy-wide { max-width: 60rem; }

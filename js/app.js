@@ -86,7 +86,7 @@
       // A diferencia de bbanime.vercel.app (cuyo propio video ya tiene un
       // fondo de estudio blanco), nuestro video tiene un fondo grisaceo;
       // lo aclaramos hacia blanco para lograr el mismo resultado visual.
-      var WHITEN = 0.8;
+      var WHITEN = 0.94;
       r = r + (255 - r) * WHITEN;
       g = g + (255 - g) * WHITEN;
       b = b + (255 - b) * WHITEN;
