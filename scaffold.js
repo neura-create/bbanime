@@ -84,7 +84,7 @@ function buildIndexHtml() {
     '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
     '  <title>BBAnime | Botellas Termo Personalizadas de Anime Impresas en 3D</title>',
     '  <meta name="description" content="Botellas termicas personalizadas con tu personaje de anime favorito, impresas en 3D. Vos elegis el universo, nosotros lo dibujamos.">',
-    '  <meta name="robots" content="index, follow">',
+    '  <meta name="robots" content="noindex, follow">',
     '  <link rel="canonical" href="https://bbanime.growestudio.workers.dev/">',
     '',
     '  <meta property="og:type" content="website">',
