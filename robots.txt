@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://bbanime.vercel.app/sitemap.xml
+Sitemap: https://bbanime.growestudio.workers.dev/sitemap.xml
